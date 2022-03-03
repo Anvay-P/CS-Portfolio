@@ -1,8 +1,8 @@
-# CS-Portfolio-1
-# Programming language: C
-# A BOE Shield-Bot application that stays stationary until you wave your hand in front of it, to which it starts roaming.
+/* CS-Portfolio-1
+Programming language: C
+A BOE Shield-Bot application that stays stationary until you wave your hand in front of it, to which it starts roaming. */
 
-# Start of program.
+// Start of program.
 
 #include <Servo.h> // Include servo library
  
@@ -88,4 +88,4 @@ void backward(int time) // Backward function
    delay(time); // Maneuver for time ms
 }
 
-# End of program.
+// End of program.
