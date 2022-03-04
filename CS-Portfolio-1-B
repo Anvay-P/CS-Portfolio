@@ -3,6 +3,8 @@ CS-Portfolio-1-B
 Programming language: C
 */
 
+// A BOE Shield-Bot application that slowly rotates in place until it detects an object. As soon as an object is detected,  the Shield-Bot chases that object.
+
 // Start of program.
 
 #include <Servo.h> // Include servo library
