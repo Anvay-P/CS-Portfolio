@@ -1,0 +1,236 @@
+/*
+CS-Portfolio-2-A
+Programming language: JavaScript
+*/
+
+// Start of program.
+
+//Anvay Patil and Sriram Vallabhaneni
+
+var score = 0;
+var click = 0;
+
+//screen1
+
+onEvent("continueButton", "click", function( ) {
+  setScreen("screen2");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//screen2
+
+onEvent("returnButton1", "click", function( ) {
+  setScreen("screen1");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+onEvent("speciesOneImage", "click", function( ) {
+  setScreen("speciesOneScreen");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+onEvent("speciesTwoImage", "click", function( ) {
+  setScreen("speciesTwoScreen");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+onEvent("speciesThreeImage", "click", function( ) {
+  setScreen("speciesThreeScreen");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+onEvent("speciesFourImage", "click", function( ) {
+  setScreen("speciesFourScreen");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+onEvent("creditsButton", "click", function( ) {
+  setScreen("creditsScreen");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+onEvent("quizButton", "click", function( ) {
+  setScreen("quizOne");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//speciesOneScreen
+
+onEvent("returnButton2", "click", function( ) {
+  setScreen("screen2");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//speciesTwoScreen
+
+onEvent("returnButton3", "click", function( ) {
+  setScreen("screen2");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//speciesThreeScreen
+
+onEvent("returnButton4", "click", function( ) {
+  setScreen("screen2");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//speciesFourScreen
+
+onEvent("returnButton5", "click", function( ) {
+  setScreen("screen2");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//creditsScreen
+
+onEvent("returnButton6", "click", function( ) {
+  setScreen("screen2");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//quizOne
+
+onEvent("wrongAnswer1", "click", function( ) {
+  setProperty("wrongAnswer1", "background-color", "red");
+  setProperty("wrongAnswer1", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("wrongAnswer2", "click", function( ) {
+  setProperty("wrongAnswer2", "background-color", "red");
+  setProperty("wrongAnswer2", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("rightAnswer1", "click", function( ) {
+  setProperty("rightAnswer1", "background-color", "green");
+  setProperty("rightAnswer1", "text", "Correct!");
+  if (click < 1) {
+    score = score + 1;
+  }
+  playSound("sound://category_alerts/vibrant_game_correct_answer_hit.mp3");
+});
+
+onEvent("wrongAnswer3", "click", function( ) {
+  setProperty("wrongAnswer3", "background-color", "red");
+  setProperty("wrongAnswer3", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("nextButton1", "click", function( ) {
+  click = 0;
+  setScreen("quizTwo");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//quizTwo
+
+onEvent("wrongAnswer4", "click", function( ) {
+  setProperty("wrongAnswer4", "background-color", "red");
+  setProperty("wrongAnswer4", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("rightAnswer2", "click", function( ) {
+  setProperty("rightAnswer2", "background-color", "green");
+  setProperty("rightAnswer2", "text", "Correct!");
+  if (click < 1) {
+    score = score + 1;
+  }
+  playSound("sound://category_alerts/vibrant_game_correct_answer_hit.mp3");
+});
+
+onEvent("wrongAnswer5", "click", function( ) {
+  setProperty("wrongAnswer5", "background-color", "red");
+  setProperty("wrongAnswer5", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("wrongAnswer6", "click", function( ) {
+  setProperty("wrongAnswer6", "background-color", "red");
+  setProperty("wrongAnswer6", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("nextButton2", "click", function( ) {
+  click = 0;
+  setScreen("quizThree");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//quizThree
+
+onEvent("wrongAnswer7", "click", function( ) {
+  setProperty("wrongAnswer7", "background-color", "red");
+  setProperty("wrongAnswer7", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("wrongAnswer8", "click", function( ) {
+  setProperty("wrongAnswer8", "background-color", "red");
+  setProperty("wrongAnswer8", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("rightAnswer3", "click", function( ) {
+  setProperty("rightAnswer3", "background-color", "green");
+  setProperty("rightAnswer3", "text", "Correct!");
+  if (click < 1) {
+    score = score + 1;
+  }
+  playSound("sound://category_alerts/vibrant_game_correct_answer_hit.mp3");
+});
+
+onEvent("wrongAnswer9", "click", function( ) {
+  setProperty("wrongAnswer9", "background-color", "red");
+  setProperty("wrongAnswer9", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("nextButton3", "click", function( ) {
+  click = 0;
+  setScreen("quizFour");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+//quizFour
+
+onEvent("rightAnswer4", "click", function( ) {
+  setProperty("rightAnswer4", "background-color", "green");
+  setProperty("rightAnswer4", "text", "Correct!");
+  if (click < 1) {
+    score = score + 1;
+  }
+  playSound("sound://category_alerts/vibrant_game_correct_answer_hit.mp3");
+});
+
+onEvent("wrongAnswer10", "click", function( ) {
+  setProperty("wrongAnswer10", "background-color", "red");
+  setProperty("wrongAnswer10", "text", "Incorrect.");
+  click = click + 1;
+  playSound("sound://category_alerts/vibrant_game_negative_affirmation.mp3");
+});
+
+onEvent("nextButton4", "click", function( ) {
+  click = 0;
+  setScreen("quizDone");
+  playSound("sound://category_app/app_button_2.mp3");
+  setProperty("label18", "text", score + " / 4");
+});
+
+onEvent("backToHome", "click", function( ) {
+  setScreen("screen2");
+  playSound("sound://category_app/app_button_2.mp3");
+});
+
+// End of program.
