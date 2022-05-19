@@ -1,0 +1,104 @@
+/*
+CS-Portfolio-2-A
+Programming language: JavaScript
+*/
+
+// Start of program.
+
+// Dataset imported from Code.org, information and images from Ivy League Wikipedia and The Harvard Crimson
+// image for introPage obtained from: https://www.google.com/search?q=Ivy+League&rlz=1C1GCEA_enUS977US977&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjt2pX024z3AhVkEEQIHdJ9BAAQ_AUoAnoECAIQBA&biw=1280&bih=609&dpr=1.5#imgrc=Ws6fe_e8wHDzeM
+
+// transition to the main menu
+onEvent ("introPageButton", "click", function(){
+  setScreen("mainMenu");
+  mainMenuSetup();
+});
+
+// transition back to the introduction page
+onEvent ("returnToIntro", "click", function() {
+  setScreen("introPage");
+});
+
+// transition from information page back to main menu
+onEvent ("returnToMain", "click", function(){
+  setScreen("mainMenu");
+});
+
+// determines what happens when a university button is clicked
+onEvent ("university0", "click", function(){
+  updateScreen("Brown University");
+});
+
+onEvent ("university1", "click", function(){
+  updateScreen("Columbia University");
+});
+
+onEvent ("university2", "click", function(){
+  updateScreen("Cornell University");
+});
+
+onEvent ("university3", "click", function(){
+  updateScreen("Dartmouth College");
+});
+
+onEvent ("university4", "click", function(){
+  updateScreen("Harvard University");
+});
+
+onEvent ("university5", "click", function(){
+  updateScreen("University of Pennsylvania");
+});
+
+onEvent ("university6", "click", function(){
+  updateScreen("Princeton University");
+});
+
+onEvent ("university7", "click", function(){
+  updateScreen("Yale University");
+});
+
+
+// sets up text of the univeristy  buttons on the main menu
+function mainMenuSetup(){
+  var institution = getColumn("Ivy League Universities", "Institution");
+  for(var i = 0; i < institution.length; i++){
+    setText("university" + i, institution[i]);
+  }
+}
+
+// function that updates the screen and its information based on the univeristy that is inputted in the parameter
+function updateScreen(university){
+  // collection of information/data from "Ivy League Universities" library
+  var logo = getColumn("Ivy League Universities", "Logo");
+  var institution = getColumn("Ivy League Universities", "Institution");
+  var location = getColumn("Ivy League Universities", "Location");
+  var nickname = getColumn("Ivy League Universities", "Athletic nickname");
+  var undergraduates = getColumn("Ivy League Universities", "Undergraduates in 2018");
+  var postgraduates = getColumn("Ivy League Universities", "Postgraduates in 2018");
+  var endowment = getColumn("Ivy League Universities", "2018 endowment in billions");
+  var staff = getColumn("Ivy League Universities", "Academic staff");
+  var yearFounded = getColumn("Ivy League Universities", "Year founded");
+  var colors = ["#422D1C", "#479AD0", "#CA2023", "#123C26", "#C01619", "#9D0C11", "#FB2E06", "#112457"];
+  var globalIndex;
+  // global index is used for finding other information/data about the university
+  
+  for(var i = 0; i < institution.length; i++){
+    if (institution[i] == university){
+      globalIndex = i;
+    }
+  }
+  
+  setProperty("universityLogo", "image", logo[globalIndex]);
+  setText("universityName", institution[globalIndex]);
+  setText("locationText", "Location: " + location[globalIndex]);
+  setText("nicknameText", "Athletic nickname: " + nickname[globalIndex]);
+  setText("undergraduatesText", "Undergraduates (in 2018): " + undergraduates[globalIndex]);
+  setText("postgraduatesText", "Postgraduates (in 2018): " + postgraduates[globalIndex]);
+  setText("endowmentText", "Endowment (in 2018): " + endowment[globalIndex] + ",000,000,000");
+  setText("academicStaffText", "Academic staff: " + staff[globalIndex]);
+  setText("yearFoundedText", "Year founded: " + yearFounded[globalIndex]);
+  setProperty("informationPage", "background-color", colors[globalIndex]);
+  setScreen("informationPage");
+}
+
+// End of program.
